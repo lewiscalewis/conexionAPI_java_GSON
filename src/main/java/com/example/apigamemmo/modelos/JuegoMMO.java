@@ -44,6 +44,46 @@ public class JuegoMMO {
         return id;
     }
 
+    public String getDeveloper() {
+        return developer;
+    }
+
+    public String getGame_url() {
+        return game_url;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public String getPlatform() {
+        return platform;
+    }
+
+    public String getProfile_url() {
+        return profile_url;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public String getShort_description() {
+        return short_description;
+    }
+
+    public String getThumnail() {
+        return thumnail;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
     @Override
     public String toString() {
         return "Objeto molon:" +

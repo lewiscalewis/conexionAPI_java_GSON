@@ -3,6 +3,7 @@ package com.example.apigamemmo.controladores;
 import com.example.apigamemmo.modelos.JuegoMMO;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.io.BufferedReader;
@@ -12,6 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import com.google.gson.Gson;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class HelloController {
 
@@ -22,7 +24,7 @@ public class HelloController {
     private ChoiceBox<String> plataforma;
 
     @FXML
-    private TableView<?> tabla;
+    private TableView<JuegoMMO> tabla;
 
     @FXML
     void initialize() throws IOException {
@@ -34,6 +36,32 @@ public class HelloController {
         plataforma.getItems().add("Alfabetico");
         plataforma.getItems().add("Fecha de lanzamiento");
         plataforma.getItems().add("Popularidad");
+
+        TableColumn<JuegoMMO, String> column1 = new TableColumn<>("ID");
+        column1.setCellValueFactory(new PropertyValueFactory<>("id"));
+
+        TableColumn<JuegoMMO, String> column2 = new TableColumn<>("Título");
+        column2.setCellValueFactory(new PropertyValueFactory<>("title"));
+
+        TableColumn<JuegoMMO, String> column3 = new TableColumn<>("Descripción");
+        column3.setCellValueFactory(new PropertyValueFactory<>("short_description"));
+
+        TableColumn<JuegoMMO, String> column4 = new TableColumn<>("Desarrollador");
+        column4.setCellValueFactory(new PropertyValueFactory<>("developer"));
+
+        TableColumn<JuegoMMO, String> column5 = new TableColumn<>("Plataforma");
+        column5.setCellValueFactory(new PropertyValueFactory<>("platform"));
+
+        TableColumn<JuegoMMO, String> column6 = new TableColumn<>("Fecha de salida");
+        column6.setCellValueFactory(new PropertyValueFactory<>("release_date"));
+
+
+        tabla.getColumns().add(column1);
+        tabla.getColumns().add(column2);
+        tabla.getColumns().add(column3);
+        tabla.getColumns().add(column4);
+        tabla.getColumns().add(column5);
+        tabla.getColumns().add(column6);
 
     }
 
@@ -73,7 +101,8 @@ public class HelloController {
             JuegoMMO[] juegos = gson.fromJson(linea, JuegoMMO[].class);
 
             for (JuegoMMO juego : juegos) {
-                resultado1.add(juego);
+                tabla.getItems().add(juego);
+                resultado1.add(juego.toString());
                 System.out.println(juego);
             }
         }
