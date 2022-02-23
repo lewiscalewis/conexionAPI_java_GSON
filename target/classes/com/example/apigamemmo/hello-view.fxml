@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apigamemmo.HelloController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apigamemmo.controladores.HelloController">
    <children>
       <TableView fx:id="tabla" layoutY="251.0" prefHeight="288.0" prefWidth="838.0" />
       <Text layoutX="200.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserte género del juego:" wrappingWidth="137.46996307373047" />

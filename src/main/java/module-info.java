@@ -7,5 +7,6 @@ module com.example.apigamemmo {
     opens com.example.apigamemmo to javafx.fxml;
     exports com.example.apigamemmo;
     exports com.example.apigamemmo.controladores;
+    exports com.example.apigamemmo.modelos;
     opens com.example.apigamemmo.controladores to javafx.fxml;
 }

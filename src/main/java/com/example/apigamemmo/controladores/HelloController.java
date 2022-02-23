@@ -40,7 +40,7 @@ public class HelloController {
     @FXML
     void lanzar() throws IOException {
 
-        ArrayList resultado1 = new ArrayList<String>();
+        ArrayList resultado1 = new ArrayList<JuegoMMO>();
 
         String url1 = "https://www.mmobomb.com/api1/games?sort-by=";
         String url2 = "https://www.mmobomb.com/api1/games?category=";
@@ -70,17 +70,15 @@ public class HelloController {
         // Mientras el BufferedReader se pueda leer, agregar contenido a resultado
         while ((linea = rd.readLine()) != null) {
             Gson gson = new Gson();
-            JuegoMMO[] footballPlayers = gson.fromJson(linea, JuegoMMO[].class);
+            JuegoMMO[] juegos = gson.fromJson(linea, JuegoMMO[].class);
 
-            for (JuegoMMO footballPlayer : footballPlayers) {
-                System.out.println(footballPlayer);
+            for (JuegoMMO juego : juegos) {
+                resultado1.add(juego);
+                System.out.println(juego);
             }
-            resultado1.add(linea);
         }
         // Cerrar el BufferedReader
         rd.close();
-        // Regresar resultado, pero como cadena, no como StringBuilder
-        System.out.println(resultado1.get(0));
     }
 
 }
